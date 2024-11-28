@@ -6,9 +6,16 @@ export const GET = async () => {
     config: configPromise,
   })
 
-  const data = await payload.find({
-    collection: 'users',
+  const { docs: data } = await payload.find({
+    collection: 'test',
+    pagination: false,
+    select: {
+      id: true,
+      productType: true,
+      productTypeRadio: true,
+    },
   })
+  console.log(data)
 
   return Response.json(data)
 }

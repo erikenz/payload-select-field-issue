@@ -1,8 +1,6 @@
-# blank
+# Payload Select Field Issue
 
-blank
+## Reprodution steps
 
-## Attributes
-
-- **Database**: mongodb
-- **Storage Adapter**: localDisk
+1. Run `http://localhost:3000/my-route` or `http://localhost:3000/api/test?select[productType]=true&select[productTypeRadio]=true`
+2. The response has a value for `productTypeRadio`, but `productType` returns `undefined`.
